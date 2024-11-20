@@ -679,9 +679,11 @@ a{
     /*Carousel*/
     .carousel{
         display: flex;
-        width: 265.03px;
+        width: 100%;
         height: 165px;
         transform: translate(10%,0);
+        align-items: center;
+        justify-items: center;
     }
 
     .carousel-slide {
@@ -689,9 +691,9 @@ a{
         height: 165px;
     }
     .carousel-slide img {
-        width: 265.03px;
+        min-width: 100%;
         height: 165px;
-        transform: translate(15%,0);
+        transform: translate(0px,0);
     }
 
     /*-----ABOUT US-----*/
