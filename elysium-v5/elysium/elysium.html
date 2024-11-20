@@ -195,12 +195,30 @@ const images = document.querySelectorAll('.carousel-slide img');
 let counter = 0;
 const size = 500;
 
+let countermobile = 0;
+const sizemobile = 350;
+
 function startCarousel() {
     counter++;
-    if (counter >= images.length) {
+    countermobile++;
+    if(window.matchMedia("(max-width: 412px)").matches)
+    {
+        if (countermobile >= images.length) {
+            countermobile = 0;
+    }
+    carouselSlide.style.transform = `translateX(${-sizemobile * countermobile}px)`;
+    
+    }
+    else
+    {
+        if (counter >= images.length) {
         counter = 0;
     }
     carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+    }
+
+    
+    
 }
 setInterval(startCarousel, 5000);
 </script>
