@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="elysium.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "GTPQ1WeFHZSKa_Zjr",
+        });
+    })();
+    </script>
 </head>
 <body>
     <!-----------------Home----------------->
@@ -167,12 +178,12 @@
                     <img id="brand" src="brand-logo/Twitter.svg" class="twitter" alt="Twitter">
                 </div>
             </div>
-            <form onsubmit="sendEmail(); reset(); return false;">
                 <div class="column2">
+                    <input type="text" class="form-control" placeholder="Enter your Name" id="name">
+                    <input type="text" class="form-control" placeholder="Enter your Email" id="email">
                     <textarea name="" id="message" placeholder="Enter your text here"></textarea>
-                    <button type="submit" onclick="sendEmail()">Send a message</button>
-            </div>
-            </form>            
+                    <button type="submit" onclick="sendMail()">Send a message</button>
+                 </div>         
         </div>      
     </div>
 </body>
@@ -284,6 +295,7 @@ characters.forEach(character => {
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
+
 <!------------------Send Message-------------------->
 <script>
     function sendMail(){
